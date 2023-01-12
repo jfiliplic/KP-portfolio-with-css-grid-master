@@ -1,41 +1,28 @@
-body {
-  color: $gray;
-  font-family: $ff-s;
-  line-height: 1.6;
-  background: $white;
-  font-size: .875rem;
-  overflow-x: hidden;  
+@use "../modules" as *;
 
-  @include mq {
-    font-size: 1.125rem;
-  }
+body {
+    color: $gray;
+    font-family: $ff-serif;
+    line-height: 1.6;
+    background-color: $white;
+    font-size: 0.875rem;
 }
 
-
 img {
-  max-width: 100%;
+    width: 100%;
+    margin: 0;
 }
 
 h1, h2, p {
-  margin-top: 0;
-  margin-bottom: 1em;
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
 h1 {
-  color: $accent;
-  line-height: 1;
-  font-size: 3.125rem;
-
-  @include mq {
-    font-size: 4.25rem;
-  }
+    line-height: 1;
+    font-size: 3.125rem;
 }
 
 h2 {
-  @include sans-serif($fs: 2rem);
-
-  @include mq {
-    font-size: 3rem;
-  }
+    @include sans-serif($fs:2rem);
 }
-

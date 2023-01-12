@@ -5,20 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My portfolio</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
-  <header class="hero" id="home">
+  <!-- <header>
     <nav>
       <ul style="list-style:none">
         <li><a href="#home">home</a></li>
         <li><a href="#about">about</a></li>
         <li><a href="#portfolio">portfolio</a></li>
-        <li><a href="contact">contact</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </nav> 
-    <h1><span>Welcome to my</span>Portfolio</h1>
-  </header>
+  </header> -->
+  <div class="welcome" id="home">
+    <h1>Welcome to my<span>Portfolio</span></h1>
+  </div>
   <main>
     <section class="intro">
       <div class="intro-left">
@@ -33,9 +35,81 @@
       </div>
     </section>
     <section class="about" id="about">
-
+      <img class="about-image" src="img/joe-portfolio.png" alt="a man on top of a mountain">
+      <h1 class=""about-title">Joe Portfolio</h1>
+      <h2 class=""about-subtitle">Designer & developer</h2>
+      <div class="about-text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt culpa quae labore! Magni distinctio culpa ipsa harum fugit quod quos hic deleniti nobis at, praesentium ipsam veritatis ab ut ipsum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum inventore recusandae, hic asperiores qui dicta animi nobis porro delectus cumque facilis iste molestiae distinctio ex beatae id error voluptate. Voluptatem.</p>
+      </div>  
+    </section>
+    <section class="portfolio" id="portfolio">
+      <h1>My work</h1>
+      <div class="portfolio-items">
+        <figure class="portfolio-item">
+          <img src="img/portfolio-01.jpg" alt="portfolio item">
+          <figcaption>
+            <h2 class=""portfolio-title">Project Name</h2>
+            <p class="portfolio-desc">A short dectiption could go right here</p>
+            <a class="portfolio-link" href="#">More info</a>
+          </figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <img src="img/portfolio-02.jpg" alt="portfolio item">
+          <figcaption>
+            <h2 class=""portfolio-title">Project Name</h2>
+            <p class="portfolio-desc">A short dectiption could go right here</p>
+            <a class="portfolio-link" href="#">More info</a>
+          </figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <img src="img/portfolio-03.jpg" alt="portfolio item">
+          <figcaption>
+            <h2 class=""portfolio-title">Project Name</h2>
+            <p class="portfolio-desc">A short dectiption could go right here</p>
+            <a class="portfolio-link" href="#">More info</a>
+          </figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <img src="img/portfolio-04.jpg" alt="portfolio item">
+          <figcaption>
+            <h2 class=""portfolio-title">Project Name</h2>
+            <p class="portfolio-desc">A short dectiption could go right here</p>
+            <a class="portfolio-link" href="#">More info</a>
+          </figcaption>
+        </figure>
+        <figure class="portfolio-item">
+          <img src="img/portfolio-05.jpg" alt="portfolio item">
+          <figcaption>
+            <h2 class=""portfolio-title">Project Name</h2>
+            <p class="portfolio-desc">A short dectiption could go right here</p>
+            <a class="portfolio-link" href="#">More info</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h1>Contact me</h1>
+      <form>
+        <label for="name">Name:</label>
+        <input type"text" id="name">
+        <label for="email">Email:</label>
+        <input type"email" id="email">
+        <label for="message">Message:</label>
+        <textarea id="message"></textarea>
+        <button type="submit" class="send-button">SEND</button>
+      </form>
     </section>
   </main>
+  <footer style="background-color: black; color:white" class="social-media">
+    <p>Follow me on social media</p>
+    <div class="social-icons">    
+      <img src="img/twitter.svg" alt="twitter logo" class="twitter">
+      <img src="img/instagram.svg" alt="instagram logo" class="instagram">
+      <img src="img/github.svg" alt="github logo" class="github">
+    </div>    
+    <p>Copyright 2017 Joe Portfolio</p>
+  </footer>
 </body>
 </html>
 
