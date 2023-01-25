@@ -6,11 +6,15 @@ body {
     line-height: 1.6;
     background-color: $white;
     font-size: 0.875rem;
+    overflow-x: hidden;
+    
+    @include mq {
+        font-size: 1.125rem;
+    }
 }
 
 img {
-    width: 100%;
-    margin: 0;
+    max-width: 100%;
 }
 
 h1, h2, p {
@@ -19,10 +23,19 @@ h1, h2, p {
 }
 
 h1 {
+    color: $blue;
     line-height: 1;
     font-size: 3.125rem;
+
+    @include mq {
+        font-size: 4.25rem;
+    }
 }
 
 h2 {
-    @include sans-serif($fs:2rem);
+    @include sans-serif($fs: 2rem);
+    
+    @include mq {
+        font-size: 3rem;
+    }
 }

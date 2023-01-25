@@ -1,41 +1,56 @@
-const portfolioContainer = document.querySelector('.portfolio-items')
+const portfolioContainer = document.querySelector(".portfolio-items")
 
-portfolioContainer.addEventListener('click', e => {
-  // console.log(e)
-  e.preventDefault()
+portfolioContainer.addEventListener("click", event => {
+    event.preventDefault()
 
-  const modalToggle = e.target.closest('.portfolio-link')
-  // console.log(modalToggle)
-  if (! modalToggle) return
+    const modalLinkClick = event.target.closest(".portfolio-link")
 
-  const modal = modalToggle.parentNode.nextElementSibling
-  const closeButton = modal.querySelector('.modal-close')
-
-  const modalOpen = _ => {
-    modal.classList.add('is-open')
-    modal.style.animation = 'modalIn 500ms forwards'
-    //document.body.style.overflowY = 'hidden'
-  }
-
-  const modalClose = _ => {
-    modal.classList.remove('is-open')
-    modal.removeEventListener('animationend', modalClose)
-  }
-
-  closeButton.addEventListener('click', _ => {
-    modal.style.animation = 'modalOut 500ms forwards'
-    modal.addEventListener('animationend', modalClose)
-    //document.body.style.overflowY = 'scroll'
-  })
-
-  document.addEventListener('keydown', e => {
-    if ( e.keyCode === 27 ) {
-      modal.style.animation = 'modalOut 500ms forwards'
-      modal.addEventListener('animationend', modalClose)
-      document.body.style.overflowY = 'scroll'
+    if (! modalLinkClick) {
+        return
     }
-  })
 
-  modalOpen()
+    else {
 
+        const modal = modalLinkClick.parentNode.nextElementSibling
+        const closeButton = modal.querySelector(".modal-close")
+        
+        let modalOpen = _ => {
+            modal.classList.add("is-open")
+            modal.style.animation = "modalFadeIn 1s forwards"
+            document.body.style.overflowY = "hidden"
+        }
+
+        modalOpen()
+
+        // z opcijo 2 ne rabimo te funkcije
+        // let modalClose = _ => {
+        //     modal.classList.remove("is-open")
+            
+        //     modal.removeEventListener("animationend", modalClose)
+        //     document.body.style.overflowY = "scroll"
+        // }
+
+        closeButton.addEventListener("click", _ => {
+            modal.style.animation = "modalFadeOut 1s forwards"
+            // modal.addEventListener("animationend", modalClose)
+            // opcija 2:
+            setTimeout(_ => {
+                modal.classList.remove('is-open')
+                document.body.style.overflowY = "scroll"
+              }, 500)
+            
+        })
+
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                modal.style.animation = "modalFadeOut 1s forwards"
+                // modal.addEventListener("animationend", modalClose)
+                // opcija 2:
+                setTimeout(_ => {
+                    modal.classList.remove('is-open')
+                    document.body.style.overflowY = "scroll"
+                  }, 500)
+            }
+        })
+    }
 })

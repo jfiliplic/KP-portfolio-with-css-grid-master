@@ -1,6 +1,7 @@
 @use "../modules" as *;
 
 .welcome {
+    position: relative;
     display: flex;
     background-image: url("../img/header-bg.png");
     background-size: cover;
@@ -15,12 +16,18 @@
         color: $dark-blue;
         line-height: 2;
         text-align: center;
+        @include mq {
+            font-size: min(3vw, 2.15rem);
+        }
 
         span {
             @include sans-serif($fs:5.5rem, $color: $blue);
             display: block;
             // ista vrednost kot $ls zaradi poravnave
             text-indent: 0.3em; 
+            @include mq {
+                font-size: min(11vw, 8rem);
+            }
         }
         
         &::before, 
